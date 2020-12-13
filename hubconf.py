@@ -1,4 +1,5 @@
 import torch
+import os
 
 dependencies = ['torch', 'yacs', 'scipy', 'termcolor']
 
@@ -12,6 +13,7 @@ def mdeq(pretrained=False, **kwargs):
     """
     from lib.models.mdeq import MDEQClsNet
     from lib.config import config
+    os.chdir('.')
     config.defrost()
     config.merge_from_file('./experiments/imagenet/cls_mdeq_SMALL.yaml')
 
