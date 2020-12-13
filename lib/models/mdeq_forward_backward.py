@@ -1,7 +1,7 @@
 # Modified based on the DEQ repo.
 
 
-from deq2d import *
+from ..modules.deq2d import *
 
 __author__ = "shaojieb"
 

@@ -2,21 +2,14 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-import logging
-import sys
-from collections import OrderedDict
 import copy
-import numpy as np
-import torch
-import torch._utils
-import torch.nn as nn
+from collections import OrderedDict
 
-sys.path.append("lib/models")
-sys.path.append("lib/modules")
-sys.path.append("../modules")
-from optimizations import *
-from deq2d import *
-from mdeq_forward_backward import MDEQWrapper
+import torch._utils
+
+from .mdeq_forward_backward import MDEQWrapper
+from ..modules.deq2d import *
+from ..modules.optimizations import *
 
 BN_MOMENTUM = 0.1
 DEQ_EXPAND = 5        # Don't change the value here. The value is controlled by the yaml files.

@@ -11,7 +11,7 @@ import torch
 from torch import nn
 from torch.autograd import Function
 
-from broyden import broyden, analyze_broyden
+from .broyden import broyden, analyze_broyden
 
 logger = logging.getLogger(__name__)
 
