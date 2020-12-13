@@ -2,19 +2,15 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-import os
-import sys
 import logging
-import functools
-
+import sys
 from collections import OrderedDict
-
+import copy
 import numpy as np
-
 import torch
-import torch.nn as nn
 import torch._utils
-import torch.nn.functional as F
+import torch.nn as nn
+
 sys.path.append("lib/models")
 sys.path.append("lib/modules")
 sys.path.append("../modules")

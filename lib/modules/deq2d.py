@@ -4,24 +4,15 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
+import logging
+
+import numpy as np
 import torch
 from torch import nn
-import torch.nn.functional as functional
 from torch.autograd import Function
-import torch.autograd as autograd
-import numpy as np
-import pickle
-import sys
-import os
-from scipy.optimize import root
-import time
-from termcolor import colored
-import copy
-sys.path.append("../")
-from modules.broyden import broyden, analyze_broyden
-from tqdm import tqdm
 
-import logging
+from broyden import broyden, analyze_broyden
+
 logger = logging.getLogger(__name__)
 
 
