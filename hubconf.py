@@ -18,9 +18,9 @@ def mdeq(pretrained=False, **kwargs):
     model = MDEQClsNet(config, **kwargs)
 
     if pretrained:
-        url = 'https://drive.google.com/u/0/open?id=12ANsUdJJ3_qb5nfiBVPOoON2GQ2v4W1g'
+        #url = 'https://drive.google.com/u/0/open?id=12ANsUdJJ3_qb5nfiBVPOoON2GQ2v4W1g'
         device = torch.device("cpu")
-        state_dict = torch.load("pretrained_models/MDEQ_Small_Cls.pkl")
+        state_dict = torch.load("pretrained_models/MDEQ_Small_Cls.pkl", map_location=device)
         model.load_state_dict(state_dict)
     return model
 
