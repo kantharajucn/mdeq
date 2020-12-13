@@ -15,7 +15,7 @@ def mdeq(pretrained=False, **kwargs):
     from lib.config import config
     os.chdir('.')
     config.defrost()
-    config.merge_from_file('./experiments/imagenet/cls_mdeq_SMALL.yaml')
+    config.merge_from_file('experiments/imagenet/cls_mdeq_SMALL.yaml')
 
     model = MDEQClsNet(config, **kwargs)
 
