@@ -22,7 +22,7 @@ def mdeq(pretrained=False, **kwargs):
     if pretrained:
         #url = 'https://drive.google.com/u/0/open?id=12ANsUdJJ3_qb5nfiBVPOoON2GQ2v4W1g'
         device = torch.device("cpu")
-        state_dict = torch.load("pretrained_models/MDEQ_Small_Cls.pkl", map_location=device)
+        state_dict = torch.load(os.path.join(os.path.dirname(os.path.realpath(__file__)),"pretrained_models/MDEQ_Small_Cls.pkl"), map_location=device)
         model.load_state_dict(state_dict)
     return model
 
