@@ -22,11 +22,11 @@ def mdeq(pretrained=False, **kwargs):
     if pretrained:
         url = 'https://github.com/kantharajucn/mdeq/releases/download/v1.0/MDEQ_Small_Cls.pkl'
         device = torch.device("cpu")
-        torch.hub.download_url_to_file(url, dst=os.path.join(os.path.dirname(os.path.realpath(__file__)),"pretrained_models/MDEQ_Small_Cls.pkl"))
-        state_dict = torch.load(os.path.join(os.path.dirname(os.path.realpath(__file__)),"pretrained_models/MDEQ_Small_Cls.pkl"), map_location=device)
+        file_path = os.path.join(os.path.dirname(os.path.realpath(__file__)),"pretrained_models/MDEQ_Small_Cls.pkl")
+        if not os.path.exists(file_path):
+            torch.hub.download_url_to_file(url, dst=file_path)
+        state_dict = torch.load(file_path, map_location=device)
         model.load_state_dict(state_dict)
     return model
 
 
-if __name__ == "__main__":
-    mdeq(True)
