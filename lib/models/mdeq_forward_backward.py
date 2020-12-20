@@ -1,14 +1,7 @@
 # Modified based on the DEQ repo.
 
-import torch
-from torch import nn
-import torch.nn.functional as functional
-from torch.autograd import Function
-import numpy as np
 
-import sys
-sys.path.append("../../")
-from modules.deq2d import *
+from ..modules.deq2d import *
 
 __author__ = "shaojieb"
 

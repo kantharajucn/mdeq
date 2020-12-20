@@ -2,22 +2,16 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-import os
-import sys
 import logging
-import functools
-from termcolor import colored
-
-from collections import OrderedDict
+import os
 
 import numpy as np
-
 import torch
-import torch.nn as nn
 import torch._utils
+import torch.nn as nn
 import torch.nn.functional as F
-sys.path.append("lib/models")
-from mdeq_core import MDEQNet
+from .mdeq_core import MDEQNet
+from termcolor import colored
 
 BN_MOMENTUM = 0.1
 logger = logging.getLogger(__name__)
